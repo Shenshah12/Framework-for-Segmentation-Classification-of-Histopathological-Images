@@ -15,7 +15,7 @@ Histopathological images and their corresponding segmentation masks are loaded f
 A U-Net architecture is employed for pixel-level segmentation of histopathological images. Its encoder–decoder structure with skip connections enables precise localization of tissue regions while preserving spatial details.
 
 ### 3. Image Classification (CNN)
-A custom convolutional neural network is used for classification. The model learns hierarchical feature representations from the segmented outputs and corresponding ground-truth masks to improve classification accuracy.
+A custom convolutional neural network is used for classification. The model learns hierarchical feature representations from the original ground-truth masks to improve classification accuracy.
 
 ### 4. Evaluation
 The framework is evaluated using standard performance metrics, including accuracy and confusion matrix analysis. These metrics are used to assess both segmentation quality and classification effectiveness.
@@ -42,6 +42,6 @@ https://espace.library.uq.edu.au/view/UQ:8be4bd0
 
 ## 🧠 Method Summary
 
-This framework integrates segmentation and classification into a unified pipeline for histopathological image analysis. The U-Net model captures fine-grained spatial structures through supervised segmentation, while the CNN leverages these segmented outputs along with ground-truth masks to learn discriminative features for accurate classification.
+This framework integrates segmentation and classification into a unified pipeline for histopathological image analysis. The U-Net model captures fine-grained spatial structures through supervised segmentation, while the CNN uses the original ground-truth masks to learn discriminative features for accurate classification.
 
 ---
