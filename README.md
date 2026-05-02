@@ -1,77 +1,47 @@
 # Image Segmentation and Classification
 
-This project implements image segmentation and classification using a U-Net model and a custom classification model. The goal is to accurately segment histopathological images into different classes and classify them accordingly.
+This project presents a deep learning framework for histopathological image analysis using a U-Net model for segmentation and a custom convolutional neural network (CNN) for classification. The objective is to accurately segment tissue structures and classify them into relevant diagnostic categories.
 
 ---
 
 ## 📌 Project Overview
 
-The project consists of the following components:
+The proposed pipeline consists of the following stages:
 
 ### 1. Data Preparation
-- Images and corresponding masks are loaded from the dataset.
-- Preprocessing includes gamma correction and conversion to RGB format.
-- Masks are one-hot encoded based on a predefined colormap.
+Histopathological images and their corresponding segmentation masks are loaded from the dataset. Preprocessing steps include gamma correction, normalization, and conversion to RGB format. The masks are then encoded using a predefined colormap to generate one-hot representations for training.
 
-### 2. U-Net Model (Segmentation)
-- A U-Net architecture is used for image segmentation.
-- The model learns to segment images into multiple tissue classes using annotated masks.
+### 2. Image Segmentation (U-Net)
+A U-Net architecture is employed to perform pixel-level segmentation of histopathological images. The encoder–decoder structure, along with skip connections, enables precise localization of tissue regions and preserves spatial information.
 
-### 3. Custom Classification Model
-- A CNN-based classification model is applied to segmented outputs.
-- It classifies segmented regions into specific categories.
+### 3. Image Classification (CNN)
+A custom convolutional neural network is used to classify the segmented regions into specific pathological categories. The model learns hierarchical feature representations from the segmented outputs to improve classification accuracy.
 
 ### 4. Evaluation
-- Performance is evaluated using:
-  - Accuracy Score
-  - Confusion Matrix
-- Metrics are used to assess both segmentation and classification results.
+The performance of the framework is assessed using standard evaluation metrics, including accuracy and confusion matrix analysis. These metrics provide insight into both segmentation quality and classification performance.
 
 ---
 
-## 🚀 Usage
+## 🚀 Workflow
 
-### Data Preparation
-Run the `Prepare_Data` class to load and preprocess images and masks.  
-Update image and mask paths accordingly and adjust preprocessing parameters such as gamma correction if needed.
-
-### Model Training
-- Train the U-Net model for segmentation.
-- Train the custom CNN model for classification.
-- Configure loss functions, optimizers, and hyperparameters as required.
-
-### Model Evaluation
-- Evaluate trained models using accuracy and confusion matrix.
-- Visualize results for performance analysis.
+- Preprocess dataset (images + masks)
+- Train U-Net model for segmentation
+- Generate segmented outputs
+- Train CNN classifier on segmented regions
+- Evaluate using accuracy and confusion matrix
 
 ---
 
 ## 📊 Dataset
 
-The dataset used in this study can be collected from the University of Queensland:
+The dataset used in this study is available from the University of Queensland:
 
 https://espace.library.uq.edu.au/view/UQ:8be4bd0
 
 ---
 
-## ⚙️ Dependencies
+## 🧠 Method Summary
 
-- Python (3.11.22)
-- OpenCV (4.7.0)
-- NumPy (1.23.5)
-- Matplotlib (3.7.1)
-- Scikit-learn (1.2.2)
-- TensorFlow (2.12.0)
-- Keras (2.12.0)
+This framework integrates segmentation and classification into a unified pipeline, enabling improved interpretability and performance in histopathological image analysis. U-Net is used to capture fine-grained spatial details, while the CNN focuses on discriminative feature learning for classification.
 
 ---
-
-## 🧠 Models Used
-
-- U-Net (for image segmentation)
-- Custom CNN (for classification)
-
----
-
-## 📌 Note
-This project combines segmentation and classification to improve automated analysis of histopathological images.
